@@ -1,0 +1,42 @@
+<!--Se crea un contenedor que hace empleo de Boostrap-->
+<div class="container">
+   <!--Se crea una fila  de Boostrap-->
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card mt-4 custom-card">
+        <div class="card-header bg-warning text-black">
+          <h2 class="text-center">Registrar Producto</h2>
+        </div>
+        <div class="card-body">
+          <div class="mb-3 text-center">
+            <!--Se muestra una imagen del producto-->
+            <img src="URL_DE_LA_IMAGEN" class="img-thumbnail" alt="Imagen del Producto" id="productImage">
+          </div>
+          <div class="mb-3 text-center">
+            <!--Se llama la función tomar foto en el que momento el usario de en el boton-->
+            <button class="btn btn-warning" (click)="tomarFoto()">Tomar Foto</button>
+          </div>
+          <!--Se inicia el formulario para registrar datos del producto -->
+          <form [formGroup]="productoForm">
+            <div class="mb-3">
+              <label class="form-label">Serial</label>
+              <input type="text" class="form-control custom-input" formControlName="serial">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Nombre del Producto</label>
+              <input type="text" class="form-control custom-input" formControlName="nombre">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Valor</label>
+              <input type="text" class="form-control custom-input" formControlName="valor">
+            </div>
+            <div class="text-center">
+              <!--Función para registrar producto-->
+              <button class="btn btn-dark custom-button" (click)="registrarProducto()">Registrar Producto</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

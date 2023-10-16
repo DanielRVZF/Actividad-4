@@ -1,0 +1,27 @@
+<!--Se crea un contenedor que hace empleo de Boostrap-->
+<div class="container">
+  <!--Se crea una fila  de Boostrap-->
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+       <!--Se crea un cuadro Boostrap-->
+      <div class="card mt-4 card-3d">
+        <!--Se crea el encabezado del cuadro donde se encuentra el menu-->
+        <div class="card-header bg-secondary text-white">
+          <h2 class="text-center">Bienvenido al Registro de Inventario</h2>
+        </div>
+        <!--Cuerpo del cuadro-->
+        <div class="card-body">
+          <p class="text-center">Por favor, seleccione una de las opciones:</p>
+          <div class="text-center">
+            <!--Se aplica la función goToling para manejar el eventodeclick -->
+            <button class="btn btn-primary btn-3d" (click)="goToLogin()">Ingresar al Login</button>
+          </div>
+          <div class="text-center mt-3">
+             <!--Se aplica la función goToling para manejar el eventodeclick -->
+            <button class="btn btn-success btn-3d" (click)="goToRegistro()">Ingresar al Registro</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
