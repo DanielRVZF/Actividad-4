@@ -1,15 +1,15 @@
 .image-container {
     position: relative;
     width: 50%;
-    max-height: 100px; /* Ajusta la altura máxima según tus preferencias */
+    max-height: 100px; 
     overflow: hidden;
   }
   
   .floating-image {
-    width: 100%; /* Cambia el ancho a "auto" para ajustar automáticamente la anchura */
-    max-height: auto; /* Ajusta la altura máxima al 100% del contenedor */
+    width: 100%; 
+    max-height: auto; 
     position: absolute;
-    animation: floatImage 4s linear infinite; /* Agrega una animación de desplazamiento */
+    animation: floatImage 4s linear infinite; 
   }
   
   @keyframes floatImage {
@@ -17,7 +17,7 @@
       transform: translate(0, 0);
     }
     50% {
-      transform: translate(0, -10px); /* Ajusta la cantidad de desplazamiento vertical */
+      transform: translate(0, -10px); 
     }
     100% {
       transform: translate(0, 0);
