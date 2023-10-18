@@ -2,7 +2,7 @@
     transform: rotateY(5deg) rotateX(10deg);
     perspective: 1000px;
     transition: transform 0.3s ease;
-    background: linear-gradient(to bottom, #ffd700, #ffcc00); /* Fondo degradado amarillo */
+    background: linear-gradient(to bottom, #ffd700, #ffcc00); 
   }
   
   .card-3d:hover {
@@ -12,8 +12,8 @@
   .btn-3d {
     transform: translateY(0);
     transition: transform 0.3s ease;
-    background-color: #000; /* Botones de color negro */
-    color: #fff; /* Texto de los botones en blanco */
+    background-color: #000;
+    color: #fff; 
   }
   
   .btn-3d:hover {
