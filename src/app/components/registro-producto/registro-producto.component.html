@@ -1,6 +1,4 @@
-<!--Se crea un contenedor que hace empleo de Boostrap-->
 <div class="container">
-   <!--Se crea una fila  de Boostrap-->
   <div class="row">
     <div class="col-md-6 offset-md-3">
       <div class="card mt-4 custom-card">
@@ -9,30 +7,49 @@
         </div>
         <div class="card-body">
           <div class="mb-3 text-center">
-            <!--Se muestra una imagen del producto-->
-            <img src="URL_DE_LA_IMAGEN" class="img-thumbnail" alt="Imagen del Producto" id="productImage">
+            <img [src]="imageUrl" class="img-thumbnail" alt="Imagen del Producto" id="productImage" />
           </div>
+          
           <div class="mb-3 text-center">
-            <!--Se llama la función tomar foto en el que momento el usario de en el boton-->
             <button class="btn btn-warning" (click)="tomarFoto()">Tomar Foto</button>
           </div>
-          <!--Se inicia el formulario para registrar datos del producto -->
-          <form [formGroup]="productoForm">
+          <div class="text-success text-center">{{ exitoMensaje }}</div>
+
+          <form [formGroup]="productoForm" (ngSubmit)="registrarProducto()">
             <div class="mb-3">
               <label class="form-label">Serial</label>
-              <input type="text" class="form-control custom-input" formControlName="serial">
+              <input
+                type="text"
+                class="form-control custom-input"
+                formControlName="serial"
+              />
             </div>
             <div class="mb-3">
               <label class="form-label">Nombre del Producto</label>
-              <input type="text" class="form-control custom-input" formControlName="nombre">
+              <input
+                type="text"
+                class="form-control custom-input"
+                formControlName="nombre"
+              />
             </div>
             <div class="mb-3">
               <label class="form-label">Valor</label>
-              <input type="text" class="form-control custom-input" formControlName="valor">
+              <input
+                type="number"
+                class="form-control custom-input"
+                formControlName="valor"
+              />
             </div>
             <div class="text-center">
-              <!--Función para registrar producto-->
-              <button class="btn btn-dark custom-button" (click)="registrarProducto()">Registrar Producto</button>
+              <button type="submit" class="btn btn-dark custom-button btn-sm mb-2">
+                Registrar Producto
+              </button>
+              <button
+                routerLink="/menu-inventario"
+                class="btn btn-primary custom-button btn-sm mb-2"
+              >
+                Volver al Menú de Inventario
+              </button>
             </div>
           </form>
         </div>

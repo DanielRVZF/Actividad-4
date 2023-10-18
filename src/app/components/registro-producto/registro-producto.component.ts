@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { IProducto } from 'src/app/interface/producto';
+import { ProductoService } from 'src/app/interface/producto.service';
+import { Camera, CameraResultType, CameraSource} from '@capacitor/camera';
 
 @Component({
   selector: 'app-registro-producto',
@@ -7,28 +10,42 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./registro-producto.component.css'],
 })
 export class RegistroProductoComponent {
+  // Define un formulario de Angular para recopilar datos del usuario.
   productoForm: FormGroup;
+  imageUrl!: any;
+  exitoMensaje: string = '';
 
-  constructor(private fb: FormBuilder) { // Se toma como parametro la instancia de FormBuilder
-    this.productoForm = this.fb.group({  // Contiene los tres siguientes campos ´
-      
-      serial: ['', Validators.required], // Se valida que el usuario no deje este campo sin ingresar valor
-      nombre: ['', Validators.required], // Se valida que el usuario no deje esta campo sin valor
-      valor: [0, Validators.required], // Se valida que el valor sea númerico
+  constructor(private fb: FormBuilder, private firebase: ProductoService) {
+    this.productoForm = this.fb.group({
+      serial: ['', Validators.required], 
+      nombre: ['', Validators.required],
+      valor: [null, Validators.required],
     });
   }
 
-  tomarFoto() { // Meoto para tomar foto
-  //Logica que se incluria en android Studio para tonmar foto
-  }
-
-  registrarProducto() { // Esta función valida que antes de enviar formulario los cambos el usuario ingreso los datos 
+  tomarFoto = async ()=> {
+    const image = await Camera.getPhoto({
+      quality:90,
+      allowEditing: false,
+      resultType: CameraResultType.Uri,
+      source: CameraSource.Camera
+    });
+    let imageUrl = image.webPath;
+    this.imageUrl = imageUrl;
+  };
+  
+  registrarProducto(): void {
     if (this.productoForm.valid) {
-      const productoData = this.productoForm.value;
-      
-      console.log(productoData);
-    } else {
-      
+      const regProducto: IProducto = this.productoForm.value;
+      this.firebase.addProducto(regProducto);
+  
+      this.exitoMensaje = 'El producto se ha registrado exitosamente.';
+      this.productoForm.reset(); //restablecerá los campos del formulario.
+  
+      //temporizador para borrar el mensaje de éxito después de un tiempo.
+      setTimeout(() => {
+        this.exitoMensaje = '';
+      }, 3000); // 3000 milisegundos (3 segundos) 
     }
   }
-}
+}  

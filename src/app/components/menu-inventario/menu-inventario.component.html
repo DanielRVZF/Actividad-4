@@ -1,27 +1,26 @@
-<!--Se crea un contenedor que hace empleo de Boostrap-->
 <div class="container">
-    <!--Se crea una fila  de Boostrap-->
-    <div class="row">
-      <div class="col-md-6 offset-md-3">
-        <div class="card mt-4 custom-card">
-             <!--Se empela un cuadro de boostrap-->
-          <div class="card-header bg-warning text-dark">
-            <h2 class="text-center">Menú de Inventario</h2>
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card mt-4 custom-card">
+        <div class="card-header bg-warning text-dark">
+          <h2 class="text-center">Menú de Inventario</h2>
+        </div>
+        <div class="card-body">
+          <div class="text-center">
+            <!--Se uso del anclaje <a> el cual emplea el enrutamiento de angular para redirigir al usuario a la vista de registrar producto-->
+            <a routerLink="/registro-producto" class="btn btn-dark mb-2">Registrar Producto</a>
+            <!--Se uso del anclaje <a> el cual emplea el enrutamiento de angular para redirigir al usuario a la vista de consultar producto-->
+            <a routerLink="/consultar-producto" class="btn btn-dark mb-2">Consultar Producto</a>
           </div>
-          <div class="card-body">
-            <div class="text-center">
-               <!--Se uso del anclaje <a> el cual emplea el enrutamiento de angular para redirigr al usuario a la vista de registrar producto-->
-              <a routerLink="/registro-producto" class="btn btn-dark">Registrar Producto</a>
-              <!--Se uso del anclaje <a> el cual emplea el enrutamiento de angular para redirigr al usuario a la vista de consultar producto-->
-              <a routerLink="/consultar-producto" class="btn btn-dark">Consultar Producto</a>
-            </div>
-            <!--Importar imagen -->
-            <div class="image-container">
-                <img src="assets/caja.png" alt="Imagen" class="floating-image">
-            </div>
+          <!--Importar imagen -->
+          <div class="image-container">
+            <img src="assets/caja.png" alt="Imagen" class="img-fluid floating-image">
+          </div>
+          <div class="text-center">
+            <button class="btn btn-danger" (click)="desloguear()">Desloguear</button>
           </div>
         </div>
       </div>
     </div>
   </div>
-  
+</div>

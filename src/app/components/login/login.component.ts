@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
     this.userService.login(this.formLogin.value) // Se llama un servico de userService, para gestionar la auntentificación
       .then(response => {
         console.log(response);
+        this.router.navigate(['/menu-inventario']);
       })
       .catch(error => console.log(error));
   }

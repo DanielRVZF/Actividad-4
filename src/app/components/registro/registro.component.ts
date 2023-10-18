@@ -3,7 +3,6 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import {UserService} from 'src/app/services/service/user.service';
 import {  OnInit } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
 
 
 

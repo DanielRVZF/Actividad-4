@@ -1,10 +1,10 @@
 export const environment = {
   firebase: {
-    projectId: 'loginuser-7985a',
-    appId: '1:555608718986:web:a6cc077af5ab7d8ac1f773',
-    storageBucket: 'loginuser-7985a.appspot.com',
-    apiKey: 'AIzaSyAlRS-6D7pY4j0D3XhTQkTZlp6fINLnrL4',
-    authDomain: 'loginuser-7985a.firebaseapp.com',
-    messagingSenderId: '555608718986',
+    projectId: 'angular-auth-af554',
+    appId: '1:384505391989:web:d5dd2e7e8d20af92d4c13c',
+    storageBucket: 'angular-auth-af554.appspot.com',
+    apiKey: 'AIzaSyDKy1LecZFN8WEZ05usDlUA5EMvW3S5mj0',
+    authDomain: 'angular-auth-af554.firebaseapp.com',
+    messagingSenderId: '384505391989',
   },
 };

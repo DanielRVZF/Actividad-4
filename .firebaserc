@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-auth-af554": {
+      "hosting": {
+        "AppAndroid": [
+          "angular-auth-af554"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-auth-af554"
+  }
+}

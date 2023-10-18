@@ -13,7 +13,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { MenuInventarioComponent } from './components/menu-inventario/menu-inventario.component';
 import { ConsultarProductoComponent } from './components/consultar-producto/consultar-producto.component';
 import { RegistroProductoComponent } from './components/registro-producto/registro-producto.component';
-
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -24,13 +24,16 @@ import { RegistroProductoComponent } from './components/registro-producto/regist
     MenuInventarioComponent,
     ConsultarProductoComponent,
     RegistroProductoComponent,
+    
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
-    AppRoutingModule, 
+    AppRoutingModule,
+    provideFirestore(() => getFirestore()), 
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
