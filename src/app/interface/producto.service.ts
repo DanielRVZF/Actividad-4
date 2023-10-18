@@ -35,7 +35,7 @@ export class ProductoService {
       const productosCollection = collection(this.firestore, 'productos');
       const queryRef = query(productosCollection, where('serial', '==', serial));
   
-      const querySnapshot = await getDocs(queryRef);
+      const querySnapshot = await getDocs(queryRef);// com
   
       if (querySnapshot.size > 0) {
         const docToDelete = querySnapshot.docs[0]; // Suponiendo que solo debería haber uno con el mismo número de serie.
