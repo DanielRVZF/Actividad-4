@@ -1,0 +1,10 @@
+.card-3d {
+    transform: rotateY(5deg) rotateX(10deg); 
+    perspective: 1000px; 
+    transition: transform 0.3s ease; 
+  }
+  
+  .card-3d:hover {
+    transform: rotateY(0) rotateX(0); 
+  }
+  
