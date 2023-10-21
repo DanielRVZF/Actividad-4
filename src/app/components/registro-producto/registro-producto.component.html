@@ -1,4 +1,7 @@
+
+<!--Se crea un contenedor que hace empleo de Boostrap-->
 <div class="container">
+  <!--Se crea una fila  de Boostrap-->
   <div class="row">
     <div class="col-md-6 offset-md-3">
       <div class="card mt-4 custom-card">
@@ -7,14 +10,16 @@
         </div>
         <div class="card-body">
           <div class="mb-3 text-center">
+            <!--Se muestra una imagen del producto-->
             <img [src]="imageUrl" class="img-thumbnail" alt="Imagen del Producto" id="productImage" />
           </div>
           
           <div class="mb-3 text-center">
+              <!--Se llama la función tomar foto en el que momento el usario de en el boton-->
             <button class="btn btn-warning" (click)="tomarFoto()">Tomar Foto</button>
           </div>
           <div class="text-success text-center">{{ exitoMensaje }}</div>
-
+          <!--Se inicia el formulario para registrar datos del producto -->
           <form [formGroup]="productoForm" (ngSubmit)="registrarProducto()">
             <div class="mb-3">
               <label class="form-label">Serial</label>
@@ -47,7 +52,7 @@
               <button
                 routerLink="/menu-inventario"
                 class="btn btn-primary custom-button btn-sm mb-2"
-              >
+              ><!--Función para registrar producto-->
                 Volver al Menú de Inventario
               </button>
             </div>
