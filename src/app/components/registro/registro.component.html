@@ -1,27 +1,32 @@
+ <!--Se crea un contenedor que hace empleo de Boostrap-->
 <div class="container">
-    <div class="row">
-      <div class="col-md-6 offset-md-3">
-        <div class="card mt-4">
-          <div class="card-header bg-info text-white">
-            <h2 class="text-center">Registrar usuario</h2>
-          </div>
-          <div class="card-body">
-            <form [formGroup]="formReg" (ngSubmit)="onSubmit()">
-              <div class="mb-3">
-                <label class="form-label">Email</label>
-                <input type="text" class="form-control" formControlName="email">
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Password</label>
-                <input type="password" class="form-control" formControlName="password">
-              </div>
-              <div class="text-center">
-                <button type="submit" class="btn btn-primary">Enviar</button>
-              </div>
-            </form>
-          </div>
+  <!--Se crea una fila  de Boostrap-->
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card mt-4 card-3d"> 
+        <!--Se empela un cuadro de boostrap-->
+        <div class="card-header bg-warning text-white">
+          <h2 class="text-center">Registrar usuario</h2>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="formReg" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="text" class="form-control" formControlName="email">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-control" formControlName="password">
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-dark">Enviar</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
   </div>
   
